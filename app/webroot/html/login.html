@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Connexion</title>
+        <link href="css/pop.css" rel="stylesheet">
+    </head>
+    <body>
+        <div  id="login_form" class="pop_container">
+        <div class="pop row-fluid" id="logino" style="width:inherit" >
+            <div id="login" class="span6 " style="">
+                <h2 style="color:#263164; text-align:center"> S’identifier </h2>
+                <div style="">  
+                    <span>E-MAIL</span><br>
+                    <input type="email" class="input-xlarge" id="email"><br>
+                    <span>Mot de passe </span><br>
+                    <input type="password" class="input-xlarge" id="pass">
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn btn-default m-btn purple" id="signin">S’identifier</button>
+                    <button class="btn btn-default m-btn purple" id="forgot">Mot de passe oublié</button>
+                </div>
+            </div>
+            <div id="subice" class="span6 " style="">
+                <img  alt="140x140" src="img/icons/close.png" class="close img-circle" width="30px" />
+                <h2 style="color:#263164; text-align:center"> Inscrivez vous </h2>
+                <div style="">
+                    <span>E-MAIL</span><br>
+                    <input type="email" class="input-xlarge" id="email_sub"><br>
+                    <div style="text-align: center;margin-top: 70;">
+                        <button class="btn btn-default m-btn purple" id="subscribe">S’inscrire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="new" class="span4 pop" style="display:none">
+            <img class="close" alt="140x140" src="img/icons/close.png" class="img-circle" width="30px" />
+            <h2 style="color:#263164; text-align:center"> <img alt="140x140" src="img/icons/presta.png" class="img-circle" width="40px" style=" vertical-align: text-top;"/>Inscription</h2>
+            <ul style="display:none" class="nav nav-tabs" id="myTab_login">
+                <li class="active"><span href="#_inscription"><img alt="140x140" src="img/icons/artist.png" class="img-circle" width="40px" /><br /><br />Local</span></li>
+                <li style=""><span href="#_prestataire"><img alt="140x140" src="img/icons/presta.png" class="img-circle" width="40px" /><br /><br />Facebook</span></li>
+                <li><span href="#_fun"><img alt="140x140" src="img/icons/fun.png" class="img-circle" width="40px" /><br /><br />Fun</span></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="_inscription">
+                    <div style=""> 
+                        <span>Votre prénom<span><br>
+                        <input class="" type="text" name="prenom"><br>
+                        <span>Votre nom</span><br>
+                        <input type="text" class="input-xlarge requiered" name="nom"><br>
+
+                        <span>Votre email</span><br>
+                        <input type="email" class="input-xlarge requiered" name="mail"><br>
+                        <span>Et votre mot de passe :)</span><br>
+                        <input type="password" class="input-xlarge requiered" name="pass">
+                        <!--<span>Date de naissance</span><br>
+                        <input type="date" placeholder="jj-mm-yyyy" name="date_naissance"><br>
+                        <span> Adresses</span><br>
+                        <input type="text" name="adresse"><br>
+                        <span> Ville *</span><br>
+                        <input  type="text" name="ville"><br>
+                        <span> Code Postal *</span><br>
+                        <input  type="text" name="cb"><br>
+                        <span> numéro de telephone</span><br>
+                        <input type="text" name="tel"><br>
+                        <span>email *</span><br>
+                        
+                        <input type="email" class="input-xlarge" name="mail_conf"><br>
+                        <span>Mot de passe  *</span><br>
+                        <input type="password" class="input-xlarge requiered" name="pass">
+                        <span> Confirm Password *</span><br>
+                        <input type="password" class="input-xlarge" name="pass_conf"><br />
+                        <input type="checkbox" style="width:16px;" id="inputEmail3"> J'accepte de m'inscrire à la newsletter<br />
+                        <input type="checkbox" style="width:16px;" id="inputconditions"> J’accepte <a  style="color:#2323A0" href="www.google.com">les Conditions Générales d’Utilisation</a> <br />-->
+                    </div>
+                    <div style=" text-align: center;">
+                        <button class="btn btn-default m-btn purple" id="registration">Registration</button>
+                    </div>
+                </div>
+                <div class="tab-pane" id="_prestataire">
+                    <div style="">  
+                        <span>Nom</span><br>
+                        <input type="text" class="input-xlarge" id="inputEmail3"><br>
+                        <span> Prénom</span><br>
+                        <input type="text" id="prenom"><br>
+                        <span> Date de naissance</span><br>
+                        <input type="text" id="date_naissances"><br>
+                        <span> Lieu de naissance</span><br>
+                        <input type="text" id="lieu_naissance"><br>
+                        <span> Adresses</span><br>
+                        <input type="text" id="adresse"><br>
+                        <span> numéro de telephone</span><br>
+                        <input type="text" id="tel"><br>
+                        <span>email</span><br>
+                        <input type="email" class="input-xlarge" id="inputEmail3"><br>
+                        <span>Confirm email</span><br>
+                        <input type="email" class="input-xlarge" id="inputEmail3"><br>
+                        <span>Password</span><br>
+                        <input type="password" class="input-xlarge" id="inputEmail3">
+                        <span> Confirm Password</span><br>
+                        <input type="password" class="input-xlarge" id="inputEmail3"><br />
+                        <input type="checkbox" class="input-xlarge" id="inputEmail3"> J'accepte de m'inscrire à la newsletter''<br />
+                    </div>
+                    <div style=" text-align: center;">
+                        <button class="btn btn-default m-btn purple">Registration</button>
+                    </div>
+                </div>
+                <div class="tab-pane" id="_fun">
+                    <div style="">  
+                        <span>Nom</span><br>
+                        <input type="text" class="input-xlarge" id="inputEmail3"><br>
+                        <span> Prénom</span><br>
+                        <input type="text" id="prenom"><br>
+                        <span>email</span><br>
+                        <input type="email" class="input-xlarge" id="inputEmail3"><br>
+                        <span>Confirm email</span><br>
+                        <input type="email" class="input-xlarge" id="inputEmail3"><br>
+                        <span>Password</span><br>
+                        <input type="password" class="input-xlarge" id="inputEmail3">
+                        <span> Confirm Password</span><br>
+                        <input type="password" class="input-xlarge" id="inputEmail3"><br />
+                    </div>
+                    <div style=" text-align: center;">
+                        <button class="btn btn-default m-btn purple">Registration</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/login.js"></script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+.pop_container{display: table-cell;
+vertical-align: middle;}
+.pop{background: rgba(255, 255, 255, 0.79);padding: 25px;   margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width:440px;
+    border: 1px solid rgba(45, 55, 104, 0.77);
+    max-height: 600px;
+overflow-y: auto;
+border-radius: 10px;}
+.pop table td:first-cchild {vertical-align: top;
+text-align: right;
+padding-right: 20px;} 
+.pop input{width: 90%;
+height: 32px;
+margin-top: 8px;background: rgba(255, 255, 255, 0.86);}
+#myTab_login li {width:25%;text-align:center;color: #a666d2;}
+.pop .close{
+	
+	float:right;
+	width:20px;
+	
+	}
+	
+#myTab_profil li img {margin-right:10px; color: #a666d2;margin-bottom: 2px;border-radius: 0;}
+.pop table.table_sans td{border-top: 1px solid rgba(255, 252, 252, 0.99);
+}
+.pop #table_participation th{
+width: 25%;
+
+color: white;background-image: -webkit-linear-gradient(top,#3476AA,#263164);
+}
+.pop .dropdown-menu .active>a {background: rgba(214, 176, 218, 0.41);
+}
+.pop #table_mail th{
+width: 33%;
+
+color: white;background-image: -webkit-linear-gradient(top,#3476AA,#263164);
+}
+.pop #table_mail_sent th{
+width: 33%;
+
+color: white;background-image: -webkit-linear-gradient(top,#3476AA,#263164);
+}
+
+.rediger_mail{margin-bottom: 20px;
+width: 732px;
+height: 200px;
+resize: none;}
+
+.pop input[type="radio"]{
+    width: 12px;
+}
+
+#participation_form img{width: 25px;
+padding: 5;
+cursor: pointer;
+border: 1px solid rgba(131, 135, 151, 0.22);
+}
+#participation_form img.active{border:3px solid rgb(34, 58, 156);padding: 4;cursor:pointer;}
+#participation_form h5{font-weight: 400;
+color: rgb(23, 50, 99);
+}

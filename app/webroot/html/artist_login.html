@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>login artist</title>
+
+<script type="text/javascript" src="js/artist_login.js"></script>
+<link href="css/pop.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div  id="artist_login_form" class="pop_container" >
+	
+
+
+
+	<div id="new" class="span4 pop" style="">
+<img class="close" alt="140x140" src="img/icons/close.png" class="img-circle" width="30px" />
+ <h2 style="color:#242F7C; text-align:center"> <img alt="140x140" src="img/icons/menu/n02.png" class="img-circle" width="40px" style=" vertical-align: text-top;"/>Infos Artiste</h2>
+
+ 
+<div class="tab-pane" id="artist">
+             
+                 <div class="tabbable"> <!-- Only required for left/right tabs -->
+                           <ul class="nav nav-tabs">
+			
+                                 <li class=""><a href="#ttab1" data-toggle="tab">Infos generales</a></li>
+                                  <li id="artist_videos" ><a href="#ttab2" data-toggle="tab">Videos</a></li>
+								  <li id="artist_photos" ><a href="#ttab3" data-toggle="tab">photos</a></li>
+						
+                               
+                                  <li id="artist_title" style="float:right"><h3 id="title_user" style="color:#a666d2; text-align:center;margin:0px;"></h3></li>
+                          </ul>
+                          <div class="tab-content  row-fluid">
+                
+                          
+                                 <div class="tab-pane active" id="ttab1">
+                                 
+                   
+                     <table class="table table-condensed " id="infos_generales_artist"> <tbody>
+                                                     
+                                                       
+                                                     
+                                                       <tr><td>Talent</td> <td><select   title="talent"><option value="musique">Musique</option>
+																						<option value="humour">Humour</option>
+																						<option value="autre">Autres</option>
+																						</select>
+																						</td></tr>
+                                                  
+                                                       <tr><td>Genre</td> <td><input   title="styles" type="text" class="input-medium search-query " ></td></tr>
+							   <tr><td>Nom de scène</td> <td><input   title="groupe" type="text" class="input-medium search-query " ></td></tr>
+							   
+                                                       <tr><td>Presentation</td> <td><textarea  title="presentation" rows="3" style="margin: 0px;  height: 146px;width: 89%;background: white;border-radius: 10px;" ></textarea ></td></tr>
+                                                      
+						
+                                                         <tr style="display:none"><td>question</td> <td><textarea  title="question" rows="3" class="" ></textarea></td></tr>							 
+                                                       
+                                                            
+                                                      
+                           </tbody></table>
+						   
+						    <button class="btn btn btn-warning  "  id="save_artist" style=" width: 138px;margin: 20px;border-radius: 20px;">Save</button>
+                                  </div>
+                          <div class="tab-pane" id="ttab2">
+                      
+                      <div class="span12" style="text-align: center;">
+                      <input placeholder="Title" class="large" style="height: 30px;margin: 0; margin-bottom:10px" type="text" value="" id="title_video" > 
+                     <input placeholder="URL video" class="large" style="height: 30px;margin: 0;" type="text" value="" id="url_video" >
+                        <button  class="btn btn btn-warning  "  id="add_video" style=" width: 138px;margin: 20px;border-radius: 20px;">ajouter</button>
+                         <button  class="btn btn btn-danger  "  id="delete_video" style=" width: margin: 20px;border-radius: 20px;">Supprimer la selection</button>
+                        <table class="table " id="table_videos" width="100%">
+  <tbody><tr>
+  
+  </tr>
+
+ 
+</tbody></table>
+                        
+                                          </div>
+                          
+                          </div>
+                          <div class="tab-pane" id="ttab3">
+                      <div class="span12" style="text-align: left;">
+				
+			<div style="background:white;text-align:center ; margin-bottom:10px">	<input  class="btn btn btn-warning  " type="file"  id="add_photo_artiste" style=" width:200px;margin-left: 20px;border-radius: 20px;">ajouter une  photo</input> </div>
+			<div style="background:white;text-align:center ;">	<button  class="btn btn btn-danger  "  id="delete_photo_artiste" style=";margin-left: 20px;border-radius: 20px;">Supprimer la selection</button> </div>
+						 <br></br>
+				<div id="gallery"></div>
+                        
+                                          </div>
+                          </div>
+                         
+                          </div>
+                           </div>
+               </div>
+
+</div>
+</body>
+</html>

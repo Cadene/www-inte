@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>login</title>
+        <link href="css/pop.css" rel="stylesheet" />
+        <link href="croppic/croppic.css" rel="stylesheet" />
+
+        <style>
+        #cropContainerHeader {
+            width: 200px;
+            height: 150px;
+            position:relative; /* or fixed or absolute */
+        }
+        </style>
+
+        <style>
+            .autocomplete-suggestions { border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); }
+            .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+            .autocomplete-no-suggestion { padding: 2px 5px;}
+            .autocomplete-selected { background: #F0F0F0; }
+            .autocomplete-suggestions strong { font-weight: bold; color: #000; }
+            .autocomplete-group { padding: 2px 5px; }
+            .autocomplete-group strong {
+                font-weight: bold; font-size: 16px; color: #000; display: block; border-bottom: 1px solid #000; }
+        </style>
+
+        <script src="croppic/croppic.min.js"></script>
+        <script>
+            var cropperOptions = {
+                uploadUrl:'img_save_to_file.php'
+            }   
+            //var cropperHeader = new Croppic('create_croppic', cropperOptions);
+            var cropperHeader = new Croppic('croppic', cropperOptions);
+        </script>
+        
+
+        <script>
+            
+            var CKEDITOR_BASEPATH = 'ckeditor/';
+        </script>
+        <script src="ckeditor/ckeditor.js"></script>
+
+
+
+    </head>
+    <body>
+        <div class="pop_container">
+        <div class="span12 pop" id="mon_compte" style="width:730px">
+            <img class="close" alt="140x140" src="img/icons/close.png" class="img-circle" width="30px" />
+            <h2 id="title_user" style="color:#263164; text-align:center;text-transform: uppercase;font-weight: 500;"></h2>
+            <ul class="nav nav-tabs" id="myTab_profil">
+                <li id="_user_menu" class="active">
+                    <span href="#_mes_infos"><img alt="140x140" src="img/icons/profil.png" class="" width="30px" />Mon profil</span>
+                </li>
+                <li id="_participation_menu">
+                    <span href="#_participations"><img alt="140x140" src="img/icons/fund.png" class="" width="30px" />Mes participations</span>
+                </li>
+                <li id="_artist_menu">
+                    <span href="#_artist_page"><img alt="140x140" src="img/icons/menu/n02.png" class="img-circle" width="30px" >Ma page artiste</span>
+                </li><!--
+                <li class="dropdown">
+                    <span href="#" class="dropdown-toggle" data-toggle="dropdown"><img alt="140x140" src="img/icons/mail.png" class="" width="30px" />Messagerie</span>
+                    <ul class="dropdown-menu">
+                        <li class=""><span href="#_rediger" data-toggle="tab">Rédigez un message</span></li>
+                        <li class="" id="get_messages"><span  href="#_reception" data-toggle="tab">Messages</span></li>
+                        <li class="" id="sent_messages"><span href="#_sent" data-toggle="tab">Messages envoyés</span></li>
+                    </ul>
+                </li>-->
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="_user_page">
+                    <div style="">
+                        <h3 style="color:#263164; text-align:center"><img alt="140x140" src="img/icons/profil.png" class="" width="30px" />Mon Profil</h3>
+                        <center>
+                            <!--
+                            <img alt="140x140" style="text-align:center" id="profile_img"
+                                 src="img/profils/0.jpg" class="img-circle" width="150px" />
+
+                            <input class="m-btn grey cache"  style="text-align:center;" title="edit_img2"
+                                   type="file" id="annonces_add_photo" placeholder="nom">
+                        
+                            <br/>-->
+
+                            <h2 style="color:#263164; font-size: 20px;">Identifiants</h2>
+
+                            <span>Email</span><br />
+                            <input type="email" class="input-xlarge" name="email"/><br />
+
+                            <span>Nouveau Password</span><br />
+                            <input type="password" class="input-xlarge" name="password" placeholder="*******************"/><br />
+
+                            <br/>
+
+                            <h2 style="color:#263164; font-size: 20px;">Informations personnelles</h2>
+
+                            <span>Nom</span><br />
+                            <input type="text" class="input-xlarge" name="nom" /><br />
+
+                            <span>Prénom</span><br />
+                            <input type="text" name="prenom" /><br />
+
+                            <span>Ville</span><br />
+                            <div>
+                                <input type="text" name="ville" id="autocomplete-ajax" />
+                                <input type="text" name="ville" id="autocomplete-ajax-x" disabled="disabled" style="color: #CCC; position: absolute; background: transparent; z-index: 1;"/>
+                            </div>
+                            <div id="selction-ajax"></div>
+
+                            <!--
+                            <span>Date de naissance</span><br />
+                            <input type="date" name="date_naissance" /><br />
+
+                            <span>Ville</span><br />
+                            <input type="text" name="ville" /><br />
+                            
+                            <span>Adresses</span><br />
+                            <input type="text" name="adresse" /><br />
+                            
+                            <span>Code Postal</span><br />
+                            <input type="text" name="cb" /><br />
+                            
+                            <span>Numéro de telephone</span><br />
+                            <input type="text" name="tel" /><br />-->
+
+                            <input type="button" id="update_profil_infos"  value="Mettre à jour" class="m-btn purple" style="height: 40px; weight: 50px;"  />
+                        </center>
+                        
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="_participations">
+                    <table class="table " id="table_participation" width="100%">
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Projet</th>
+                            <th scope="col">Type de participation</th>
+                            <th scope="col">Montant</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tab-pane" id="_artist_page">
+                    <h3 style="color:#263164; text-align:center">
+                            <img alt="140x140" src="img/icons/menu/n02.png" class="img-circle" width="35px" > Ma page artiste</h3>
+                    <center>
+                        <input type="button" id="create_artist"
+                               value="Créer votre nouvelle page artiste :)"
+                               class="m-btn purple" style="height: 40px; weight: 50px;"  />
+                    </center>
+                    <!--<table class="table " id="table_artiste" width="100%">
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Projet</th>
+                            <th scope="col">Type de participation</th>
+                            <th scope="col">Montant</th>
+                        </tr>
+                    </table>-->
+                </div>
+
+                <div class="tab-pane" id="_artist_new">
+                    <div style="">
+                        <h3 style="color:#263164; text-align:center">
+                            <img alt="140x140" src="img/icons/menu/n02.png" class="img-circle" width="40px" style=" vertical-align: text-top;">Ma page artiste</h3>
+                        <center>
+                            <!--
+                            <img alt="140x140" style="text-align:center" id="profile_img"
+                                 src="img/profils/0.jpg" class="img-circle" width="150px" />
+
+                            <input class="m-btn grey cache"  style="text-align:center;" title="edit_img2"
+                                   type="file" id="annonces_add_photo" placeholder="nom">
+                        
+                            <br/>-->
+                            <span>Nom de scène *</span><br />
+                            <input type="text" class="input-xlarge" name="create_groupe" /><br />
+
+
+                            <span>Genre *</span><br />
+                            <input type="text" name="create_genre" /><br />
+
+                            <span>Talent *</span><br />
+                            <select name="create_talent" title="talent">
+                                <option value="musique">Musique</option>
+                                <option value="humour">Humour</option>
+                                <option value="danse">Danse</option>
+                                <option value="autre">Autres</option>
+                            </select><br/>
+                            <br/>
+
+                            <span>Introduction</span><br />
+                            <textarea name="create_introduction" rows="3" cols="60"
+                            placeholder="Donnez envie en quelques lignes."></textarea><br />
+                            <br />
+
+                            <span>Présentation</span><br />
+                            <textarea class="ckeditor" name="create_presentation" id="create_editor"></textarea>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace( 'create_editor');
+                            </script>
+                            <br />
+                            <!--
+                            <span>Date de naissance</span><br />
+                            <input type="date" name="date_naissance" /><br />
+
+                            <span>Ville</span><br />
+                            <input type="text" name="ville" /><br />
+                            
+                            <span>Adresses</span><br />
+                            <input type="text" name="adresse" /><br />
+                            
+                            <span>Code Postal</span><br />
+                            <input type="text" name="cb" /><br />
+                            
+                            <span>Numéro de telephone</span><br />
+                            <input type="text" name="tel" /><br />-->
+
+                            <input type="button" id="create_artist_button"  value="Créer un nouvel artiste !" class="m-btn purple" style="height: 40px; weight: 50px;"  />
+                        </center>
+                        
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="_artist_info">
+                    <div style="">
+                        <h3 style="color:#263164; text-align:center">
+                            <img alt="140x140" src="img/icons/menu/n02.png" class="img-circle" width="40px" style=" vertical-align: text-top;">Ma page artiste</h3>
+                        <center>
+                            <!--
+                            <img alt="140x140" style="text-align:center" id="profile_img"
+                                 src="img/profils/0.jpg" class="img-circle" width="150px" />
+
+                            <input class="m-btn grey cache"  style="text-align:center;" title="edit_img2"
+                                   type="file" id="annonces_add_photo" placeholder="nom">
+                        
+                            <br/>-->
+                            <h2 style="color:#263164; font-size: 20px;">Informations de l'artiste</h2>
+
+                            <input type="hidden" name='id' value='' />
+
+                            <span>Nom de scène</span><br />
+                            <input type="text" class="input-xlarge" name="groupe" /><br />
+
+                            <span>Photo de profile</span>
+                            <div id="croppic"></div><br/>
+
+                            <span>Genre</span><br />
+                            <input type="text" name="genre" /><br />
+
+                            <span>Talent</span><br />
+                            <select name="talent" title="talent">
+                                <option value="musique">Musique</option>
+                                <option value="humour">Humour</option>
+                                <option value="danse">Danse</option>
+                                <option value="autre">Autres</option>
+                            </select><br/>
+                            <br/>
+
+                            <span>Introduction</span><br />
+                            <textarea name="introduction" rows="3" cols="60"
+                            placeholder="Donnez envie en quelques lignes."></textarea><br />
+                            <br />
+
+                            <span>Présentation</span><br />
+                            <textarea class="ckeditor" name="presentation" id="editor"></textarea>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace( 'editor');
+                            </script>
+                            
+                            <!--<textarea name="presentation" rows="10" cols="60"
+                            placeholder="Vous pouvez compléter votre présentation après la création de votre compte."></textarea><br />-->
+                            <br />
+                            <!--
+                            <span>Date de naissance</span><br />
+                            <input type="date" name="date_naissance" /><br />
+
+                            <span>Ville</span><br />
+                            <input type="text" name="ville" /><br />
+                            
+                            <span>Adresses</span><br />
+                            <input type="text" name="adresse" /><br />
+                            
+                            <span>Code Postal</span><br />
+                            <input type="text" name="cb" /><br />
+                            
+                            <span>Numéro de telephone</span><br />
+                            <input type="text" name="tel" /><br />-->
+
+                            <input type="button" id="update_artist_button"  value="Modifier les informations de l'artiste" class="m-btn purple" style="height: 40px; weight: 50px;"  />
+                        </center>
+                        
+                    </div>
+                </div>
+
+                <!--
+                <div class="tab-pane" id="_rediger">
+                    <div class="">
+                        <h2 style="color:#263164">Send a message</h2>
+                        <forms action="" method="post" id="contacts">
+                            <div class="span4">
+                                <label>Sujet</label>
+                                <input type="text" name="name" value="" id="sujet" class="span4">
+                            </div>
+                            <div class="span4">
+                                <label>Destinataire:</label>
+                                <input type="text" name="destinataire"  id="a" class="span4">
+                            </div>
+                            <span class="honeypot">
+                            <label>Honeypot:</label>
+                            <input type="text" name="last" value="" id="last">
+                            </span>
+                            <div class="span6">
+                                <label>Message:</label>
+                                <textarea rows="6" name="message" id="text" class="span6 rediger_mail"></textarea>
+                            </div>
+                            <div class="span4">
+                                <div class="message"></div>
+                                <input type="submit" id="send_message" value="Send Message" class="m-btn purple">
+                            </div>
+                        </forms>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="_reception">
+                    <table class="table " id="table_mail" width="100%">
+                        <tr>
+                            <th scope="col">De</th>
+                            <th scope="col">Sujet</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                        <tr>
+                            <td>yassine mestari</td>
+                            <td>Hello</td>
+                            <td>15/05/2013</td>
+                        </tr>
+                        <tr>
+                            <td> Ash Maurya</td>
+                            <td>There is a new message for you</td>
+                            <td>10/05/2013</td>
+                        </tr>
+                        <tr>
+                            <td>Zine Addadi</td>
+                            <td>Zine vous a envoyé un message</td>
+                            <td>09/05/2013</td>
+                        </tr>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="_sent">
+                    <table class="table " id="table_mail_sent" width="100%">
+                        <tr>
+                            <th scope="col">A</th>
+                            <th scope="col">Sujet</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                        <tr>
+                            <td>yassine mestari</td>
+                            <td>Hello</td>
+                            <td>15/05/2013</td>
+                        </tr>
+                        <tr>
+                            <td> Ash Maurya</td>
+                            <td>There is a new message for you</td>
+                            <td>10/05/2013</td>
+                        </tr>
+                        <tr>
+                            <td>Zine Addadi</td>
+                            <td>Zine vous a envoyé un message</td>
+                            <td>09/05/2013</td>
+                        </tr>
+                        </tr>
+                    </table>
+                </div>-->
+            </div>
+        </div>
+        <script type="text/javascript" src="js/compte.js"></script>
+    </body>
+</html>
